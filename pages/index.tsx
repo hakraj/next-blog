@@ -4,8 +4,9 @@ import Date from '../components/date';
 import Layout, { siteTitle } from '../components/Layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
+import { GetStaticProps } from "next"
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
   return {
     props: {
@@ -14,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData }: { allPostsData: { id: string, date: string, title: string }[] }) {
   return (
     <Layout home>
       <Head>
@@ -22,7 +23,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Hello, I'm hak_raj. i'm softare developer and web3 enthusiast. You can contact me on <a href='https://twitter.com/hak_raj_codes'>twitter</a>.</p>
-        <p>This is a simple intro, let's connect across all newtork. Actively sharing what i learn.</p>
+        <p>This is a simple intro, let's connect across all newtork. Actively sharing what i learn. Big on community 🚀, Big on dev 💻</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
