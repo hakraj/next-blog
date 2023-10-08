@@ -7,7 +7,7 @@ import Link from 'next/link';
 const name = 'Hakeem Raji';
 export const siteTitle = 'hak_raj blog';
 
-export default function Layout({ children, home } : { children : React.ReactNode, home?: boolean }) {
+export default function Layout({ children, home }: { children: React.ReactNode, home?: boolean }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -30,7 +30,7 @@ export default function Layout({ children, home } : { children : React.ReactNode
           <>
             <Image
               priority
-              src="/images/profile.jpg"
+              src="/images/profile.webp"
               className={utilStyles.borderCircle}
               height={144}
               width={144}
@@ -43,7 +43,7 @@ export default function Layout({ children, home } : { children : React.ReactNode
             <Link href="/">
               <Image
                 priority
-                src="/images/profile.jpg"
+                src="/images/profile.webp"
                 className={utilStyles.borderCircle}
                 height={108}
                 width={108}
